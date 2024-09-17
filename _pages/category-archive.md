@@ -1,7 +1,7 @@
 ---
 layout: categories
 title: "Category"
-permalink: /categories/
+permalink: /Categories/
 author_profile: true
 sidebar_main: true
 ---
