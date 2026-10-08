@@ -1,0 +1,38 @@
+import { Article } from '@/components/article';
+
+export const metadata = {
+  title: '소개',
+  description: 'Compose에서 시작해 Android와 시스템의 원리를 탐구하는 블로그.',
+  alternates: { canonical: '/about/' },
+};
+
+export default function Layout({ children }) {
+  return <Article title="작동하는 코드에서, 설명할 수 있는 코드로." description="Android를 배우며 만나는 질문과 실험을 기록합니다.">{children}</Article>;
+}
+
+## 화면에서 시작하는 질문
+
+상태 하나를 바꾸었을 때 화면의 어떤 부분이 다시 실행되는지,
+Modifier의 순서가 왜 다른 결과를 만드는지 살펴봅니다.
+작은 차이를 직접 확인하는 것에서 학습을 시작합니다.
+
+## 한 겹씩 내려가는 학습
+
+첫 주제는 **Jetpack Compose**입니다. 이후 Android의 기반 지식,
+AOSP의 구현, 운영체제와 자료구조로 범위를 넓힐 예정입니다.
+각 주제는 앱을 만들면서 마주치는 구체적인 문제와 연결합니다.
+
+<Callout>
+이 블로그는 학습과 함께 발전합니다. 확인한 사실과 아직 풀리지 않은 질문을 구분하고,
+설명이 달라지면 검증 환경과 수정 내용을 함께 기록할 예정입니다.
+</Callout>
+
+## 기록하는 방식
+
+1. 설명하고 싶은 질문을 하나 정합니다.
+2. 결과를 예상하고, 최소 예제로 재현합니다.
+3. 공식 문서와 소스를 통해 동작을 확인합니다.
+4. 실제 앱에서 어떤 판단에 도움이 되는지 정리합니다.
+
+글과 예제는 [GitHub](https://github.com/alphablue)에서 함께 관리합니다.
+학습 순서는 [시리즈](/series/)에서 확인할 수 있습니다.

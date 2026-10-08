@@ -1,0 +1,46 @@
+import { Article } from '@/components/article';
+
+export const metadata = {
+  title: '글 제목',
+  description: '이 글에서 설명할 질문을 한 문장으로 작성합니다.',
+  alternates: { canonical: '/posts/your-slug/' },
+};
+
+export default function Layout({ children }) {
+  return <Article title={metadata.title} description={metadata.description}>{children}</Article>;
+}
+
+## 질문
+
+어떤 상황에서 생긴 질문인지 설명합니다.
+
+## 예상과 재현
+
+실행 결과를 먼저 예상하고 최소 코드로 확인합니다.
+
+```kotlin title="Example.kt"
+fun main() {
+    println("Hello, Android")
+}
+```
+
+## 동작 원리
+
+관찰한 사실과 공식 문서, 소스에서 확인한 내용을 연결합니다.
+
+<Callout>확인된 사실과 추가 검증이 필요한 가설을 구분합니다.</Callout>
+
+## 실제 적용
+
+이 원리가 실제 앱의 어떤 선택에 영향을 주는지 기록합니다.
+
+## 검증 환경과 참고 자료
+
+| 항목 | 값 |
+| --- | --- |
+| 확인 날짜 | YYYY-MM-DD |
+| Kotlin / Compose | 검증한 버전 |
+| Android / 기기 | 실제 환경 |
+| 예제 코드 | 고정 커밋 링크 |
+
+공식 문서와 소스의 버전 또는 커밋을 연결합니다.
