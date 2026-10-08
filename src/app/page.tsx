@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Metadata } from 'next';
 import { posts } from '@/lib/site';
 
@@ -10,15 +9,12 @@ export default function Home() {
     <section className="hero">
       <div className="hero-copy"><p className="eyebrow"><span className="status-dot" /> ANDROID ENGINEERING NOTES</p>
         <h1>화면에서 시작해,<br /><span>원리까지.</span></h1>
+      </div>
+      <div className="hero-intro">
         <p className="hero-description">Compose로 만나는 작은 질문을 따라<br className="desktop-break" /> Android의 동작과 시스템의 원리를 탐구합니다.</p>
         <Link className="button" href="/posts/test-compose-state/">테스트 글 읽어보기 <span aria-hidden="true">↗</span></Link>
         <p className="hero-caption">작은 질문 하나가, 깊은 이해로 자라도록.</p>
       </div>
-      <figure className="mascot-stage">
-        <div className="mascot-topline"><span><span className="status-dot" /> GROWING WITH ANDROID</span><span>EST. 2026</span></div>
-        <Image className="hero-mascot" src="/brand/mascot.webp" alt="새싹과 초록 안테나, 반짝이는 눈을 가진 alphablue 캐릭터" width={1120} height={625} preload />
-        <figcaption><span>배움은 작은 호기심에서.</span><span>ONE QUESTION AT A TIME</span></figcaption>
-      </figure>
     </section>
     <section className="learning-path" aria-label="Compose에서 시스템으로 이어지는 학습 경로"><span className="eyebrow">한 겹씩, 차근차근</span><ol><li><Link href="/series/compose/"><span>01</span>Compose <span aria-hidden="true">→</span></Link></li><li><Link href="/series/#android"><span>02</span>Android <span aria-hidden="true">→</span></Link></li><li><Link href="/series/#aosp"><span>03</span>AOSP & OS <span aria-hidden="true">↗</span></Link></li></ol></section>
     <section className="series-feature" aria-labelledby="series-heading"><div className="feature-side"><span className="eyebrow">FIRST SERIES</span><span className="series-number">01</span><span className="pill">연재 준비 중</span></div>
