@@ -47,6 +47,8 @@ PR에서는 검사만 하며 별도 미리보기 주소는 만들지 않습니�
 - `src/components/`: 공통 탐색과 본문 컴포넌트
 - `src/lib/site.ts`: 사이트 정보, 발행 글 목록, Compose 학습 주제
 - `src/mdx-components.tsx`: MDX에서 사용하는 컴포넌트
+- `public/brand/`: 새싹 캐릭터 로고, 홈 이미지, 브라우저·홈 화면 아이콘
+- `docs/brand.md`: 색상 기준과 로고 이미지 가공 기록
 - `templates/post.mdx`: 발행 전 원고 템플릿 (사이트에 포함되지 않음)
 - `scripts/check-export.mjs`: 정적 배포 결과 확인
 
