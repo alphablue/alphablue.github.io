@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/navigation';
-import { site } from '@/lib/site';
+import { posts, site } from '@/lib/site';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,7 +21,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <Navigation />
       <a className="github-link" href="https://github.com/alphablue" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span><span className="sr-only"> (새 탭)</span></a>
     </div></header>
-    <main id="main" className="site-main">{children}</main>
+    <main id="main" className="site-main">
+      {posts.some(post => post.isDemo) && <aside className="preview-banner"><span className="demo-label">디자인 미리보기</span><p>테스트 글로 화면을 구성하고 있습니다. 실제 학습 글은 추후 발행합니다.</p><Link href="/posts/">테스트 글 보기 →</Link></aside>}
+      {children}
+    </main>
     <footer className="site-footer"><div><Link className="footer-brand" href="/">alphablue.</Link><p>관찰하고, 실험하고, 기록합니다.</p></div><div className="footer-links"><a href="/feed.xml">RSS</a><a href="https://github.com/alphablue/alphablue.github.io">Source ↗</a><span>© {new Date().getUTCFullYear()} alphablue</span></div></footer>
   </body></html>;
 }

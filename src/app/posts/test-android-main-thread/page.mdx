@@ -1,0 +1,35 @@
+import { Article } from '@/components/article';
+
+export const metadata = {
+  title: '메인 스레드의 일은 어디까지일까? · 테스트 글',
+  description: '질문과 관찰 기록을 짧게 읽는 형태의 Android 테스트 글입니다.',
+  alternates: { canonical: '/posts/test-android-main-thread/' },
+  robots: { index: false, follow: true },
+};
+
+export default function Layout({ children }) {
+  return <Article title="메인 스레드의 일은 어디까지일까?" description={metadata.description} category="ANDROID · SAMPLE 02" isDemo>{children}</Article>;
+}
+
+## 오늘 남겨둘 질문
+
+화면이 잠깐 멈춘 것처럼 보였을 때 무엇부터 확인하면 좋을까요? 이 테스트 글은 짧은 관찰 노트를 가정합니다. 전체 원리를 한 번에 설명하기보다, 문제를 발견한 상황과 다음에 확인할 항목을 한 화면씩 읽을 수 있는 길이로 적어 봅니다.
+
+실제 글에서는 사용자의 동작, 화면에서 관찰한 현상, 재현한 환경을 먼저 기록할 예정입니다. 지금은 디자인을 위한 예시이므로 성능 수치나 원인에 관한 결론은 넣지 않았습니다.
+
+## 관찰 노트의 구성
+
+1. **상황** — 어떤 화면에서 무엇을 하던 중이었는지 적습니다.
+2. **관찰** — 예상과 달랐던 화면의 변화를 적습니다.
+3. **질문** — 아직 모르는 부분을 확인 가능한 질문으로 바꿉니다.
+4. **다음 실험** — 한 번에 하나의 조건을 바꾸는 재현 절차를 준비합니다.
+
+<Callout>짧은 글에는 별도 목차를 생략했습니다. 긴 Compose 테스트 글과 읽는 흐름을 비교해 볼 수 있습니다.</Callout>
+
+## 다음에 확인할 것
+
+- [ ] 재현에 필요한 최소 화면 만들기
+- [ ] 실행 환경과 관찰 방법 정하기
+- [ ] 결과를 확인한 뒤 공식 문서와 연결하기
+
+작은 기록이 쌓이면 긴 설명으로 연결할 수 있습니다. [Compose 테스트 글](/posts/test-compose-state/)은 같은 블로그에서 코드와 표가 포함된 긴 글이 어떻게 보이는지 보여줍니다.

@@ -1,0 +1,46 @@
+import { Article } from '@/components/article';
+
+export const metadata = {
+  title: '앱에서 시작한 요청이 시스템 서비스에 닿기까지, 한 번의 호출을 따라가 보기 · 테스트 글',
+  description: '긴 제목과 여러 단계의 설명이 어떻게 보이는지 확인하는 AOSP 테스트 글입니다.',
+  alternates: { canonical: '/posts/test-aosp-system/' },
+  robots: { index: false, follow: true },
+};
+
+export default function Layout({ children }) {
+  return <Article title="앱에서 시작한 요청이 시스템 서비스에 닿기까지, 한 번의 호출을 따라가 보기" description={metadata.description} category="AOSP · SAMPLE 03" isDemo toc={[
+    { id: 'starting-point', title: '앱의 질문을 출발점으로' },
+    { id: 'reading-source', title: '소스를 읽으며 남길 기록' },
+    { id: 'connection', title: '운영체제 개념과 연결하기' },
+  ]}>{children}</Article>;
+}
+
+<h2 id="starting-point">앱의 질문을 출발점으로</h2>
+
+이 제목은 목록과 본문에서 긴 한글 제목이 줄바꿈되는 모습을 확인하기 위해 길게 작성했습니다. 앞으로 AOSP 글에서는 앱에서 만난 구체적인 질문을 출발점으로 삼고, 소스에서 확인한 경로를 따라가 보는 구성을 생각하고 있습니다.
+
+아래 내용은 글의 형태를 보여주는 샘플입니다. 특정 Android 버전의 실제 호출 경로를 분석한 결과가 아니며, 클래스 이름이나 소스 위치를 검증한 것처럼 표시하지 않습니다.
+
+<h2 id="reading-source">소스를 읽으며 남길 기록</h2>
+
+### 1. 기준점 정하기
+
+어떤 Android 버전과 소스 커밋을 읽고 있는지 먼저 기록할 예정입니다. 글을 읽는 사람이 같은 위치를 찾을 수 있도록 경로와 근거를 연결하는 자리가 필요합니다.
+
+### 2. 경계마다 질문 남기기
+
+| 구간 | 글에서 확인하려는 질문 |
+| --- | --- |
+| 앱에서 사용하는 API | 호출하는 쪽이 기대하는 동작은 무엇인가? |
+| 프레임워크의 구현 | 요청을 처리하는 책임은 어디에 있는가? |
+| 시스템과의 연결 | 어떤 경계를 지나며 무엇이 달라지는가? |
+
+이 표는 실제 호출 순서를 확정한 도식이 아니라 분석할 때 던질 질문의 목록입니다. 완성된 글에서는 소스와 실행 근거를 확인한 뒤 단계별 설명을 채울 예정입니다.
+
+<h2 id="connection">운영체제 개념과 연결하기</h2>
+
+프로세스, 스레드, 메모리 같은 개념을 다룰 때도 앱 개발에서 출발한 질문으로 돌아오려고 합니다. 개념의 정의를 이해하는 것과 실제 구현에서 그 개념이 쓰이는 위치를 확인하는 것을 연결하는 방식입니다.
+
+<Callout>긴 제목, 여러 단계의 소제목, 표가 이어져도 본문이 편안하게 읽히는지 확인하는 테스트 페이지입니다.</Callout>
+
+다음 단계에서는 [Compose 학습 경로](/series/compose/)부터 실제 원고를 채우고, 관련된 Android와 시스템 주제를 차례로 연결할 예정입니다.

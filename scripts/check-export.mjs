@@ -6,14 +6,13 @@ const root = resolve('out');
 function walk(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? walk(join(directory, entry.name)) : [join(directory, entry.name)]);
 }
-const routes = ['index.html', 'posts/index.html', 'series/index.html', 'series/compose/index.html', 'about/index.html', '404.html'];
+const routes = walk(root).filter(path => path.endsWith('.html')).map(path => path.slice(root.length + 1));
 for (const route of routes) {
   const html = readFileSync(join(root, route), 'utf8');
   assert.match(html, /<html[^>]+lang="ko"/, `${route}: 한국어 문서 설정`);
   assert.match(html, /<h1[\s>]/, `${route}: 정적 HTML에 제목 필요`);
 }
 assert.match(readFileSync(join(root, 'about/index.html'), 'utf8'), /화면에서 시작하는 질문/, 'MDX 본문 사전 렌더링');
-assert.match(readFileSync(join(root, 'posts/index.html'), 'utf8'), /첫 번째 기록을 준비하고/, '발행 전 빈 목록');
 for (const file of walk(root).filter(path => path.endsWith('.html'))) {
   const html = readFileSync(file, 'utf8');
   for (const [, href] of html.matchAll(/(?:href|src)="(\/[^"#?]*)[^"]*"/g)) {
